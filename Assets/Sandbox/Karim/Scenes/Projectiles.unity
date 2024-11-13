@@ -443,11 +443,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8001741852768599599, guid: 39da1fa1486b09548ba207671c0bcd23,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 490536266}
+      addedObject: {fileID: 490536268}
     - targetCorrespondingSourceObject: {fileID: 8001741852768599599, guid: 39da1fa1486b09548ba207671c0bcd23,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 490536268}
+      addedObject: {fileID: 490536269}
   m_SourcePrefab: {fileID: 100100000, guid: 39da1fa1486b09548ba207671c0bcd23, type: 3}
 --- !u!1 &490536264 stripped
 GameObject:
@@ -461,7 +461,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 490536263}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &490536266
+--- !u!114 &490536268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 490536264}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf9ef6351bda5447a60d5b386a824d8, type: 3}
+  m_Script: {fileID: 11500000, guid: c6e8234e689607f4287a891a77d19830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
@@ -478,7 +478,11 @@ MonoBehaviour:
   shootPoint: {fileID: 459990218}
   fireRate: 1
   projectileSpeed: 10
---- !u!114 &490536268
+  seekRadius: 8.68
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &490536269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,7 +491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 490536264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e8234e689607f4287a891a77d19830, type: 3}
+  m_Script: {fileID: 11500000, guid: baf9ef6351bda5447a60d5b386a824d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
