@@ -7,8 +7,7 @@ public class MenuInstantiateTowerASL : MonoBehaviour
     [SerializeField] public GameObject tower;
     [SerializeField] public GameObject targetHand;
 
-    private void HandleControllerActions()
-    {
+    public void HandleControllerActions(){
         Instantiate(tower, targetHand.transform.position, Quaternion.identity);
     }
            
