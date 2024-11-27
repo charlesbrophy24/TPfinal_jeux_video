@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class MenuInstantiateTowerPointCostASL : MonoBehaviour
 {
-    [SerializeField] public GameObject tower;
-    [SerializeField] public GameObject targetHand;
-    [SerializeField] public PlayerInfoASL _player;
+    [SerializeField] private GameObject tower;
+    [SerializeField] private GameObject targetHand;
+    [SerializeField] private PlayerInfoASL player;
+    [SerializeField] private int pointCostNb;
+    //[SerializeField] private int pointCostMin;
+    
+
 
 
     public void HandleControllerActions(){
-        Instantiate(tower, targetHand.transform.position, Quaternion.identity);
+     
+        if (player.PointsNb >= pointCostNb){
+            Instantiate(tower, targetHand.transform.position, Quaternion.identity);
+            player.PointsNb -= pointCostNb;
+        }
         //_player.PointsNb;
-        _player.PointsNb - 5;
-
     }
-           
-  
-
 }
