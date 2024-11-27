@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class AutoShooterVise : MonoBehaviour
 {
-public GameObject towerPrefab;            // Le prefab de la tour (à définir dans l'éditeur)
 public GameObject projectilePrefab;      // Le prefab du projectile
-public Transform shootPoint;             // Le point d'où le projectile va être tiré
+public Transform shootPoint;             // Le point d'où le projectile va être tiré (représente la tour)
 public float fireRate = 1f;              // Intervalle entre chaque tir (en secondes)
 public float projectileSpeed = 10f;      // La vitesse du projectile
-public float seekRadius = 50f;           // Rayon dans lequel le projectile va chercher un ennemi
+public float seekRadius = 50f;           // Rayon dans lequel la tour cherche un ennemi
 public LayerMask enemyLayer;             // Layer des ennemis (à définir dans l'éditeur)
 public float rotationSpeed = 5f;         // Vitesse de rotation de la tour vers l'ennemi
 public Color radiusColor = new Color(0, 0, 1, 0.3f); // Couleur du rayon (par défaut bleu avec transparence)
@@ -33,30 +32,44 @@ void FireProjectile()
 {
     if (projectilePrefab && shootPoint)
     {
-        // Trouver tous les ennemis avec le tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        // Trouver tous les ennemis dans le rayon de détection
+        Collider[] enemiesInRange = Physics.OverlapSphere(shootPoint.position, seekRadius, enemyLayer);
 
-        // Trouver l'ennemi le plus proche
-        GameObject closestEnemy = GetClosestEnemy(enemies);
-
-        if (closestEnemy != null)
+        // Filtrer pour ne garder que les ennemis avec le tag "Enemy"
+        List<GameObject> validEnemies = new List<GameObject>();
+        foreach (Collider col in enemiesInRange)
         {
-            // Calculer la direction vers l'ennemi
-            Vector3 directionToTarget = (closestEnemy.transform.position - shootPoint.position).normalized;
-
-            // Faire tourner la tour progressivement vers l'ennemi
-            Vector3 newDirection = Vector3.RotateTowards(shootPoint.forward, directionToTarget, rotationSpeed * Time.deltaTime, 0f);
-            shootPoint.rotation = Quaternion.LookRotation(newDirection);
-
-            // Créer le projectile à la position de tir
-            GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-
-            // Calculer la direction vers l'ennemi et donner une vitesse au projectile
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (col.CompareTag("Enemy"))
             {
-                // Appliquer la direction et la vitesse au projectile
-                rb.velocity = directionToTarget * projectileSpeed;
+                validEnemies.Add(col.gameObject);
+            }
+        }
+
+        // Si des ennemis valides sont dans le rayon
+        if (validEnemies.Count > 0)
+        {
+            // Trouver l'ennemi le plus proche
+            GameObject closestEnemy = GetClosestEnemy(validEnemies.ToArray());
+
+            if (closestEnemy != null)
+            {
+                // Calculer la direction vers l'ennemi
+                Vector3 directionToTarget = (closestEnemy.transform.position - shootPoint.position).normalized;
+
+                // Faire tourner la tour progressivement vers l'ennemi
+                Vector3 newDirection = Vector3.RotateTowards(shootPoint.forward, directionToTarget, rotationSpeed * Time.deltaTime, 0f);
+                shootPoint.rotation = Quaternion.LookRotation(newDirection);
+
+                // Créer le projectile à la position de tir
+                GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+
+                // Calculer la direction vers l'ennemi et donner une vitesse au projectile
+                Rigidbody rb = projectile.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    // Appliquer la direction et la vitesse au projectile
+                    rb.velocity = directionToTarget * projectileSpeed;
+                }
             }
         }
     }
