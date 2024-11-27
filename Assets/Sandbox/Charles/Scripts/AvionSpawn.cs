@@ -4,43 +4,44 @@ using UnityEngine;
 
 public class AvionSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject prefab;    // Prefab to spawn
+    [SerializeField] private Vector3 ZoneSize;     // Size of the zone in which to spawn the prefab
 
-
-    
-
-    [SerializeField] private GameObject prefab;
-
-    [SerializeField] private Vector3 ZoneSize;
+    private GameObject currentInstance;            // Track the current spawned instance
 
     void Start()
     {
-        
+        // Initially spawn an object at the start if needed
+        SpawnPrefab();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        GameObject instantiated = Instantiate(prefab);
+        // Check if the current instance is null (destroyed) and spawn a new one
+        if (currentInstance == null)
+        {
+            SpawnPrefab();
+        }
+    }
 
-        instantiated.transform.position = new Vector3(
-            
-            Random.Range(transform.position.x - ZoneSize.x / 2, transform.position.x + ZoneSize.x /2),
-            Random.Range(transform.position.y - ZoneSize.y / 2, transform.position.y + ZoneSize.y /2),
-            Random.Range(transform.position.x - ZoneSize.x / 2, transform.position.x + ZoneSize.x /2)
+    // Method to spawn the prefab in a random position within the zone
+    private void SpawnPrefab()
+    {
+        // Randomize position within the zone size
+        Vector3 spawnPosition = new Vector3(
+            Random.Range(transform.position.x - ZoneSize.x / 2, transform.position.x + ZoneSize.x / 2),
+            Random.Range(transform.position.y - ZoneSize.y / 2, transform.position.y + ZoneSize.y / 2),
+            Random.Range(transform.position.z - ZoneSize.z / 2, transform.position.z + ZoneSize.z / 2) // Corrected axis here
         );
 
-        
-
+        // Instantiate the prefab
+        currentInstance = Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
-    private void OnDrawGizmos() {
-        
+    // Draw the zone in the editor for visualization
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, ZoneSize);
-
     }
-
-    
-
 }
