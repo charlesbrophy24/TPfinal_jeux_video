@@ -478,15 +478,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e8234e689607f4287a891a77d19830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 490536264}
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
     type: 3}
   shootPoint: {fileID: 459990218}
   fireRate: 1
-  projectileSpeed: 10
+  projectileSpeed: 20
   seekRadius: 8.68
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  rotationSpeed: 5
+  radiusColor: {r: 0, g: 0, b: 1, a: 0.3}
 --- !u!114 &490536269
 MonoBehaviour:
   m_ObjectHideFlags: 0

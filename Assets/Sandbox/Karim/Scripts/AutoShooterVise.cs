@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class AutoShooterVise : MonoBehaviour
 {
+public GameObject towerPrefab;            // Le prefab de la tour (à définir dans l'éditeur)
 public GameObject projectilePrefab;      // Le prefab du projectile
 public Transform shootPoint;             // Le point d'où le projectile va être tiré
 public float fireRate = 1f;              // Intervalle entre chaque tir (en secondes)
 public float projectileSpeed = 10f;      // La vitesse du projectile
 public float seekRadius = 50f;           // Rayon dans lequel le projectile va chercher un ennemi
 public LayerMask enemyLayer;             // Layer des ennemis (à définir dans l'éditeur)
+public float rotationSpeed = 5f;         // Vitesse de rotation de la tour vers l'ennemi
+public Color radiusColor = new Color(0, 0, 1, 0.3f); // Couleur du rayon (par défaut bleu avec transparence)
 
 private float timeSinceLastShot = 0f;
 
@@ -38,9 +41,12 @@ void FireProjectile()
 
         if (closestEnemy != null)
         {
-            // Orienter la tour (shootPoint) vers l'ennemi le plus proche
+            // Calculer la direction vers l'ennemi
             Vector3 directionToTarget = (closestEnemy.transform.position - shootPoint.position).normalized;
-            shootPoint.rotation = Quaternion.LookRotation(directionToTarget);
+
+            // Faire tourner la tour progressivement vers l'ennemi
+            Vector3 newDirection = Vector3.RotateTowards(shootPoint.forward, directionToTarget, rotationSpeed * Time.deltaTime, 0f);
+            shootPoint.rotation = Quaternion.LookRotation(newDirection);
 
             // Créer le projectile à la position de tir
             GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
@@ -77,6 +83,21 @@ GameObject GetClosestEnemy(GameObject[] enemies)
 
     return closestEnemy;
 }
+
+// Fonction pour dessiner la zone de recherche dans l'éditeur
+void OnDrawGizmos()
+{
+    // Vérifier si la position du shootPoint est définie et visible
+    if (shootPoint != null)
+    {
+        // Configurer la couleur du rayon (modifiable dans l'éditeur)
+        Gizmos.color = radiusColor;
+
+        // Dessiner une sphère pour représenter le rayon de recherche
+        Gizmos.DrawSphere(shootPoint.position, seekRadius);
+    }
+}
+
 
 
 }
