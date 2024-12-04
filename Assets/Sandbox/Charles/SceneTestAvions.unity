@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 70029773}
   - component: {fileID: 70029772}
   m_Layer: 0
-  m_Name: TourSpawn
+  m_Name: TourSpawngood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
