@@ -636,6 +636,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TourPrincipale1(plaine)
       objectReference: {fileID: 0}
+    - target: {fileID: 1040954103831762712, guid: 260ed9ca111739749a63f10aff7440cb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040954103831762712, guid: 260ed9ca111739749a63f10aff7440cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.453
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040954103831762712, guid: 260ed9ca111739749a63f10aff7440cb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488105864966574906, guid: 260ed9ca111739749a63f10aff7440cb,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2573681760144808278, guid: 260ed9ca111739749a63f10aff7440cb,
         type: 3}
       propertyPath: m_LocalPosition.x
