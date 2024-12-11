@@ -6,6 +6,7 @@ public class PlaneMovement : MonoBehaviour
     public float speed = 10f;  // Movement speed
     public float rotationSpeed = 5f;  // How fast the plane rotates towards the target
     public float attackRange = 10f;  // Distance at which the plane will start dropping projectiles
+    public float maxDistanceFromTower = 100f;  // Maximum distance the plane can travel from the tower
 
     public ProjectileDrop projectileDropScript;  // Reference to the ProjectileDrop script
 
@@ -68,6 +69,14 @@ public class PlaneMovement : MonoBehaviour
             // Optionally, rotate the plane to keep facing the direction it's flying
             Quaternion targetRotation = Quaternion.LookRotation(previousDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        // Constrain the plane's movement within the maximum spawn distance
+        float distanceFromTower = Vector3.Distance(transform.position, target.position);
+        if (distanceFromTower > maxDistanceFromTower)
+        {
+            // If the plane exceeds the max distance, destroy it
+            Destroy(gameObject);  // Destroy the plane object
         }
     }
 }

@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8634131806075367999
 Transform:
   m_ObjectHideFlags: 0
@@ -268,6 +268,9 @@ MonoBehaviour:
   despawnRadiusY: 8
   despawnRadiusZ: 55
   spawnDistance: 51
+  maxSpawnDistance: 91.7
+  spawnHeightOffset: 10
+  minSpawnHeight: 10
 --- !u!1 &3508504519834129846
 GameObject:
   m_ObjectHideFlags: 0
