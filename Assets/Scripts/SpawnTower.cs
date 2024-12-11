@@ -136,6 +136,19 @@ public class SpawnTower : MonoBehaviour
         {
             Instantiate(towerPrefab, hitPoint, Quaternion.identity);
         }
+
+
+        //
+
+        //ce qui retire suffisament de point
+        
+        //
+
+       // if (player.PointsNb >= pointCostNb)
+       // {
+        //    Instantiate(tower, targetHand.transform.position, Quaternion.identity);
+       //     player.PointsNb -= pointCostNb;
+       // }
     }
 }
 
