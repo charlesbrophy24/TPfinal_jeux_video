@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8747686779604615842}
   - component: {fileID: 2744175157334118053}
-  - component: {fileID: 2102459613423753344}
   m_Layer: 0
   m_Name: Avion
   m_TagString: Untagged
@@ -51,21 +50,8 @@ MonoBehaviour:
   target: {fileID: 1656290911167814429, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193, type: 3}
   speed: 10
   rotationSpeed: 5
-  attackRange: 10
+  attackRange: 30
   projectileDropScript: {fileID: 5571722135856360846}
---- !u!114 &2102459613423753344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069912362348071226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420c5a7de2613804da37743b43f43394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroy: 10
 --- !u!1 &4494505691655858231
 GameObject:
   m_ObjectHideFlags: 0
