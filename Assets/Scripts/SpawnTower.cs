@@ -3,7 +3,7 @@ using UnityEngine;
 using Meta.XR.MRUtilityKit;
 using TMPro;
 
-public class DisplayLabel : MonoBehaviour
+public class SpawnTower : MonoBehaviour
 {
     [Header("Raycast Settings")]
     [Tooltip("Point de départ du rayon pour détecter les ancres.")]
@@ -27,7 +27,7 @@ public class DisplayLabel : MonoBehaviour
 
     [Header("Tower Spawn")]
     [Tooltip("Préfabriqué de la tour à instancier.")]
-    [SerializeField] private GameObject towerPrefab;
+    [SerializeField] public GameObject towerPrefab;
 
     [Tooltip("Bouton utilisé pour faire apparaître une tour.")]
     [SerializeField] private OVRInput.Button spawnButton;
