@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 2144802280763693604}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -264,11 +264,8 @@ MonoBehaviour:
   spawnRadiusX: 49.8
   spawnRadiusY: 8
   spawnRadiusZ: 50
-  despawnRadiusX: 55
-  despawnRadiusY: 8
-  despawnRadiusZ: 55
-  spawnDistance: 51
   maxSpawnDistance: 91.7
+  spawnDistance: 51
   spawnHeightOffset: 10
   minSpawnHeight: 10
 --- !u!1 &3508504519834129846
