@@ -32,6 +32,8 @@ public class SpawnTower : MonoBehaviour
     [Tooltip("Bouton utilisé pour faire apparaître une tour.")]
     [SerializeField] private OVRInput.Button spawnButton;
 
+    [SerializeField] private PlayerInfoASL player;
+
     // Variables privées
     private MRUKRoom room; // Référence à la pièce actuelle détectée par MRUK
     private Vector3 hitPoint; // Point d'impact du rayon
