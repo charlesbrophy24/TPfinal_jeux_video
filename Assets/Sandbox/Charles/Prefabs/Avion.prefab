@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.85, y: 9.076, z: -42.28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.02473121, y: 0.02473121, z: 0.02473121}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4398144957187639211}
   - {fileID: 1289803570548077060}
@@ -51,6 +51,7 @@ MonoBehaviour:
   speed: 10
   rotationSpeed: 5
   attackRange: 30
+  maxDistanceFromTower: 50
   projectileDropScript: {fileID: 5571722135856360846}
 --- !u!1 &4494505691655858231
 GameObject:

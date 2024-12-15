@@ -134,8 +134,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.02473121, y: 0.12365605, z: 0.02473121}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4305846894459493927}
   - {fileID: 8583168763550972257}
@@ -261,16 +261,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planePrefab: {fileID: 1069912362348071226, guid: 7e0426124479f2945a36c6e22fc1ad60,
     type: 3}
-  spawnRadiusX: 49.8
-  spawnRadiusY: 8
-  spawnRadiusZ: 50
-  despawnRadiusX: 55
-  despawnRadiusY: 8
-  despawnRadiusZ: 55
+  spawnRadiusX: 2
+  spawnRadiusY: 3
+  spawnRadiusZ: 2
+  maxSpawnDistance: 4
   spawnDistance: 51
-  maxSpawnDistance: 91.7
-  spawnHeightOffset: 10
-  minSpawnHeight: 10
+  spawnHeightOffset: 0.5
+  minSpawnHeight: 0.79
 --- !u!1 &3508504519834129846
 GameObject:
   m_ObjectHideFlags: 0
