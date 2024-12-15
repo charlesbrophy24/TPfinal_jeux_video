@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Meta.XR.MRUtilityKit;
+using Unity.Mathematics;
 
 public class CarSpawn : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class CarSpawn : MonoBehaviour
     public MRUKAnchor.SceneLabels spawnLabels;
 
     public float minEdgeDistance = 0.3f;
+
+    public float normalOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +48,10 @@ public class CarSpawn : MonoBehaviour
         
         room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.FACING_UP, minEdgeDistance, LabelFilter.Included(spawnLabels), out Vector3 pos, out Vector3 norm);
 
-        
+        Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
+        randomPositionNormalOffset.y = 0;
 
-        Instantiate(prefabToSpawn);
+        Instantiate(prefabToSpawn, randomPositionNormalOffset, Quaternion.identity);
 
     }
 }
