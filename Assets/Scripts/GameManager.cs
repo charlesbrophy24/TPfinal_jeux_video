@@ -19,5 +19,10 @@ public class GameManager : MonoBehaviour
         player.LifesNb = LifeOnResset;
         ChangementScenes("Menu"); // Corrected this line to call the instance method
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
 }
 
