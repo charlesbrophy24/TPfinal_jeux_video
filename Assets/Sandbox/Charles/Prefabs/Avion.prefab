@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb52cea6dacd5f147b5b958d49c76926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1656290911167814429, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193, type: 3}
+  towerPrefab: {fileID: 2144802280763693604, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193,
+    type: 3}
+  targetPrefab: {fileID: 2144802280763693604, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193,
+    type: 3}
   speed: 10
   rotationSpeed: 5
   attackRange: 30

@@ -2,81 +2,106 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-    public Transform target;  // The target the plane will fly towards
-    public float speed = 10f;  // Movement speed
-    public float rotationSpeed = 5f;  // How fast the plane rotates towards the target
-    public float attackRange = 10f;  // Distance at which the plane will start dropping projectiles
-    public float maxDistanceFromTower = 100f;  // Maximum distance the plane can travel from the tower
+    public GameObject towerPrefab;      // Prefab for the tower
+    public GameObject targetPrefab;     // Prefab for the target
+    public float speed = 10f;           // Movement speed
+    public float rotationSpeed = 5f;    // Plane rotation speed
+    public float attackRange = 10f;     // Range for dropping projectiles
+    public float maxDistanceFromTower = 100f;  // Max distance plane can fly from the tower
 
-    public ProjectileDrop projectileDropScript;  // Reference to the ProjectileDrop script
+    public ProjectileDrop projectileDropScript;  // Reference to ProjectileDrop script
 
-    private Vector3 previousDirection;  // Store the direction the plane was moving towards
-    private bool isFlyingPastTarget = false; // To track if the plane has passed the target
+    private Transform tower;            // Instantiated tower reference
+    private Transform target;           // Instantiated target reference
+    private Vector3 previousDirection;  // Store the last direction for smooth flight
+    private bool isFlyingPastTarget = false;
+
+    void Start()
+    {
+        // Instantiate tower and target prefabs at runtime
+        if (towerPrefab != null && targetPrefab != null)
+        {
+            GameObject towerObject = Instantiate(towerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            tower = towerObject.transform;
+
+            GameObject targetObject = Instantiate(targetPrefab, new Vector3(30, 0, 30), Quaternion.identity);
+            target = targetObject.transform;
+        }
+        else
+        {
+            Debug.LogError("Tower or Target Prefab is missing!");
+        }
+    }
 
     void Update()
     {
-        // Check the distance between the plane and the target
+        if (tower == null || target == null) return;  // Ensure prefabs are instantiated
+
+        // Distance check between plane and target
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-        // If the plane is within the attack range, enable projectile dropping
+        // Handle projectile dropping
         if (distanceToTarget <= attackRange)
         {
             if (!projectileDropScript.isDropping)
             {
-                projectileDropScript.StartDropping();  // Start dropping projectiles
+                projectileDropScript.StartDropping();
             }
         }
         else
         {
             if (projectileDropScript.isDropping)
             {
-                projectileDropScript.StopDropping();  // Stop dropping projectiles if the plane leaves the range
+                projectileDropScript.StopDropping();
             }
         }
 
-        // Plane movement logic: move towards the target first
+        // Movement logic
         if (!isFlyingPastTarget)
         {
-            // Set the plane's Y to its current Y value so it stays at the same height
-            Vector3 targetPosition = target.position;
-            targetPosition.y = transform.position.y;  // Keep the Y constant for the plane
-
-            // Move the plane towards the target position
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-            // Rotate the plane to face the target (smooth rotation)
-            Vector3 direction = (targetPosition - transform.position).normalized;
-            Quaternion targetRotation = Quaternion.LookRotation(direction);  // Create rotation towards the target
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-            // Save the direction the plane was moving in before it reaches the target
-            if (Vector3.Distance(transform.position, targetPosition) > 0.1f)  // Only update the direction if moving
-            {
-                previousDirection = (targetPosition - transform.position).normalized;
-            }
-
-            // If we've reached the target, start flying in the direction it was moving
-            if (transform.position == targetPosition)
-            {
-                isFlyingPastTarget = true; // Start flying past the target
-            }
+            MoveTowardsTarget();
         }
         else
         {
-            // Continue moving in the direction the plane was traveling before reaching the target
-            transform.position += previousDirection * speed * Time.deltaTime;
-
-            // Optionally, rotate the plane to keep facing the direction it's flying
-            Quaternion targetRotation = Quaternion.LookRotation(previousDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            FlyPastTarget();
         }
 
-        // Constrain the plane's movement within the maximum spawn distance
-        float distanceFromTower = Vector3.Distance(transform.position, target.position);
-        if (distanceFromTower > maxDistanceFromTower)
+        // Check for destruction when too far from the tower
+        if (Vector3.Distance(transform.position, tower.position) > maxDistanceFromTower)
         {
-            // If the plane exceeds the max distance, destroy it
-            Destroy(gameObject);  // Destroy the plane object
+            Debug.Log("Plane destroyed for exceeding max distance from tower");
+            Destroy(gameObject);
         }
+    }
+
+    private void MoveTowardsTarget()
+    {
+        Vector3 targetPosition = target.position;
+        targetPosition.y = transform.position.y; // Keep the plane at its current height
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        // Smoothly rotate the plane to face the target
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        // Save the direction for flying past the target
+        previousDirection = direction;
+
+        // Start flying past the target when close
+        if (Vector3.Distance(transform.position, targetPosition) < 0.5f)
+        {
+            isFlyingPastTarget = true;
+        }
+    }
+
+    private void FlyPastTarget()
+    {
+        transform.position += previousDirection * speed * Time.deltaTime;
+
+        // Keep rotating smoothly in the previous direction
+        Quaternion targetRotation = Quaternion.LookRotation(previousDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
