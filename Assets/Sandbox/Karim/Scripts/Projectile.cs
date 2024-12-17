@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private PlayerInfoASL player;
+    //[SerializeField] private int points;
     // Lorsque le projectile entre en collision avec un objet
     void OnCollisionEnter(Collision collision)
     {
@@ -23,11 +25,20 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            
+            
+            player.PointsNb += 5;
             // Détruire l'ennemi
             Destroy(other.gameObject);
 
+            
+
             // Détruire le projectile
             Destroy(gameObject);
+
+            
+
+
         }
     }
 }

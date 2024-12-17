@@ -3,7 +3,12 @@ guid: 5f91f6ecf93453147a20cb559cc80273
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rayStartPoint: {instanceID: 0}
+  - gizmoDisplay: {instanceID: 0}
+  - gizmoLabelText: {instanceID: 0}
+  - towerPrefab: {instanceID: 0}
+  - player: {fileID: 11400000, guid: b985b874a022d954491553f704b335d6, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

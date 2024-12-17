@@ -463,6 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5481209271201176943}
   - component: {fileID: -2352740418521577820}
+  - component: {fileID: -5997052887384799801}
   m_Layer: 0
   m_Name: BatleTowerTestScene
   m_TagString: Untagged
@@ -584,3 +585,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5997052887384799801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001741852768599599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8732d7d3ab4768b4587dc0f0c83e6166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: b985b874a022d954491553f704b335d6, type: 2}
+  pointCostNb: 10
+  activeDuration: 5

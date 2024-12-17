@@ -22,8 +22,8 @@ public class UILifePointsASL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Nblifetxt.text = player.PointsNb.ToString();
+       NbPointstxt.text = player.PointsNb.ToString();
 
-        NbPointstxt.text = player.LifesNb.ToString();
+       Nblifetxt.text = player.LifesNb.ToString();
     }
 }

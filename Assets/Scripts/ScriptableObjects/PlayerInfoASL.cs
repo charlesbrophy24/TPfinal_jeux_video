@@ -9,9 +9,5 @@ public class PlayerInfoASL : ScriptableObject
 {
     public int PointsNb;
     public int LifesNb;
-    private void Start()
-    {
-       // Debug.Log("PlayerInfo");
-    }
     
 }
