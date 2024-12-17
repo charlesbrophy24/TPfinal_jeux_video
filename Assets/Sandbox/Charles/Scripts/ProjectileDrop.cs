@@ -7,12 +7,13 @@ public class ProjectileDrop : MonoBehaviour
     private float nextDropTime;
 
     public bool isDropping = false;  // Flag to indicate whether projectiles should be dropped
+    public Transform planeTransform; // Reference to the plane's transform for projectile positioning
 
     void Update()
     {
         if (isDropping)
         {
-            // Drop projectiles at intervals while in range
+            // Drop projectiles at intervals
             if (Time.time >= nextDropTime)
             {
                 DropProjectile();
@@ -33,14 +34,16 @@ public class ProjectileDrop : MonoBehaviour
 
     void DropProjectile()
     {
-        // Instantiate a projectile at the plane's position
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-        // Apply a downward force to simulate gravity falling
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        if (rb != null)
+        if (projectilePrefab != null && planeTransform != null)
         {
-            rb.velocity = Vector3.down * 10f;  // Adjust speed as needed
+            // Instantiate a projectile at the plane's position, adjusted slightly for an offset
+            Vector3 dropPosition = planeTransform.position - planeTransform.forward * 2f; // Adjust the position in front of the plane
+            Instantiate(projectilePrefab, dropPosition, Quaternion.identity);
+            Debug.Log("Projectile Dropped!");
+        }
+        else
+        {
+            Debug.LogError("Projectile Prefab or Plane Transform not assigned in ProjectileDrop.");
         }
     }
 }

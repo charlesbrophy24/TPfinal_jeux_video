@@ -262,10 +262,10 @@ MonoBehaviour:
   planePrefab: {fileID: 1069912362348071226, guid: 7e0426124479f2945a36c6e22fc1ad60,
     type: 3}
   spawnRadiusX: 2
-  spawnRadiusY: 3
+  spawnRadiusY: 2
   spawnRadiusZ: 2
-  maxSpawnDistance: 4
-  spawnDistance: 51
+  maxSpawnDistance: 10
+  spawnDistance: 5
   spawnHeightOffset: 0.5
   minSpawnHeight: 0.79
 --- !u!1 &3508504519834129846

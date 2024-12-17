@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8747686779604615842}
-  - component: {fileID: 2744175157334118053}
+  - component: {fileID: 346881813740653548}
   m_Layer: 0
-  m_Name: Avion
+  m_Name: Avion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 7325117181264583544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2744175157334118053
+--- !u!114 &346881813740653548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,17 +45,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069912362348071226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb52cea6dacd5f147b5b958d49c76926, type: 3}
+  m_Script: {fileID: 11500000, guid: 7555b593c852d624e90e8b66115bcc58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 606867095590069357, guid: 4cbbf48e189d8f448917eeda32c912ff,
+  targetTower: {fileID: 0}
+  despawnRadius: 0
+  speed: 2.5
+  elevationOffset: 2
+  dropRange: 5
+  projectilePrefab: {fileID: 824338972837063950, guid: f856940065b4808449eed2aac060b01b,
     type: 3}
-  targetPrefab: {fileID: 606867095590069357, guid: 4cbbf48e189d8f448917eeda32c912ff,
-    type: 3}
-  speed: 10
-  rotationSpeed: 5
-  attackRange: 30
-  maxDistanceFromTower: 100
   projectileDropScript: {fileID: 5571722135856360846}
 --- !u!1 &4494505691655858231
 GameObject:
@@ -103,8 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 824338972837063950, guid: f856940065b4808449eed2aac060b01b,
     type: 3}
-  dropInterval: 0.5
+  dropInterval: 1
   isDropping: 0
+  planeTransform: {fileID: 8747686779604615842}
 --- !u!1 &5324600253946670638
 GameObject:
   m_ObjectHideFlags: 0

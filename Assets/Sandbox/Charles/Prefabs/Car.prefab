@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4873618172859232017}
   - component: {fileID: 9081195351524814473}
   - component: {fileID: 29915797202288249}
-  - component: {fileID: 1152537683842324385}
   - component: {fileID: 1782785303837911217}
+  - component: {fileID: 1152537683842324385}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102148020899646207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -108,21 +108,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1152537683842324385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102148020899646207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feaa54e0343ea224b9a0e08331a3ab93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1782785303837911217}
-  speed: 1
-  target: {fileID: 2144802280763693604, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193, type: 3}
 --- !u!195 &1782785303837911217
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -145,6 +130,21 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1152537683842324385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102148020899646207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaa54e0343ea224b9a0e08331a3ab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1782785303837911217}
+  speed: 1
+  target: {fileID: 2144802280763693604, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193, type: 3}
 --- !u!1001 &2804366342561597578
 PrefabInstance:
   m_ObjectHideFlags: 0
