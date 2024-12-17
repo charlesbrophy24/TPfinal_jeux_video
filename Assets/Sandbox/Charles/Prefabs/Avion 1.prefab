@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTower: {fileID: 0}
   despawnRadius: 0
-  speed: 2.5
+  speed: 2
   elevationOffset: 2
   dropRange: 5
   projectilePrefab: {fileID: 824338972837063950, guid: f856940065b4808449eed2aac060b01b,

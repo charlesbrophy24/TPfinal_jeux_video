@@ -13,10 +13,12 @@ GameObject:
   - component: {fileID: 9081195351524814473}
   - component: {fileID: 29915797202288249}
   - component: {fileID: 1782785303837911217}
+  - component: {fileID: 3446388878487019965}
   - component: {fileID: 1152537683842324385}
+  - component: {fileID: 7094261455010055128}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +132,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3446388878487019965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102148020899646207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e66fd643f2414f43b2f39c91c877430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1152537683842324385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +159,27 @@ MonoBehaviour:
   agent: {fileID: 1782785303837911217}
   speed: 1
   target: {fileID: 2144802280763693604, guid: 3a07cbbc5e7b9b04bb8c191b7c47c193, type: 3}
+--- !u!65 &7094261455010055128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102148020899646207}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.71, y: 2.71, z: 2.32}
+  m_Center: {x: 0, y: 1.08, z: 0}
 --- !u!1001 &2804366342561597578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 4574086037275618604, guid: 2a80ff06f279b0549b22b4a7859a9513,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4574086037275618604, guid: 2a80ff06f279b0549b22b4a7859a9513,
         type: 3}
@@ -211,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 4574086037275618604, guid: 2a80ff06f279b0549b22b4a7859a9513,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4574086037275618604, guid: 2a80ff06f279b0549b22b4a7859a9513,
         type: 3}
@@ -227,6 +262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jeep Willys 1944
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630324934106262767, guid: 2a80ff06f279b0549b22b4a7859a9513,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
