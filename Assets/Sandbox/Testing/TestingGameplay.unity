@@ -26360,8 +26360,8 @@ Transform:
   m_GameObject: {fileID: 1533207876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.39, y: 0, z: 0}
+  m_LocalScale: {x: 2.0599, y: 2.5367, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2137215760}
@@ -35820,6 +35820,7 @@ GameObject:
   - component: {fileID: 2137215763}
   - component: {fileID: 2137215761}
   - component: {fileID: 2137215762}
+  - component: {fileID: 2137215767}
   m_Layer: 4
   m_Name: FlatUnityCanvas
   m_TagString: Untagged
@@ -36109,6 +36110,21 @@ MonoBehaviour:
     ReEnterDistance: 0.02
   _closeDistanceThreshold: 0.001
   _tiebreakerScore: 0
+--- !u!114 &2137215767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137215759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4151c8adcbfa3044ca3d386272f5c067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 2d1aabaa3bf12344892213d098081694, type: 2}
+  Nblifetxt: {fileID: 1317681164}
+  NbPointstxt: {fileID: 1781945406}
 --- !u!1001 &2139185531
 PrefabInstance:
   m_ObjectHideFlags: 0
