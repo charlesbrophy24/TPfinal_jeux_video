@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011d5ddfb0966984fbeadd43efe698f0, type: 3}
   m_Name: InfoJoueur 1
   m_EditorClassIdentifier: 
-  PointsNb: 0
+  PointsNb: 100
   LifesNb: 10
