@@ -572,8 +572,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &540754744177392324
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +656,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
->>>>>>> develop
 --- !u!1 &701469196684241074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,8 +1901,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1814897280129523507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,7 +2144,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &2093191911416381655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,8 +2393,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &2268574466682535799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,7 +2500,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1986034497377045359, guid: 4b0dd71de3f483640aa33c9d547083d9, type: 3}
->>>>>>> develop
 --- !u!1 &2359044145190619786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,8 +2583,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &2479697444363858164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2635,6 @@ Transform:
   - {fileID: 5703861896774973422}
   m_Father: {fileID: 2364125263805855145}
   m_LocalEulerAnglesHint: {x: 0, y: 177.808, z: 0}
->>>>>>> develop
 --- !u!1 &2499043713264608716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,8 +2967,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &2891009195745117162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,7 +3073,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &3004000464728893458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,8 +3156,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &3008528578013936928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,7 +3240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
->>>>>>> develop
 --- !u!1 &3109520826406496879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,8 +3522,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &3584080520313772013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3628,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &3690054470830873803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,8 +3825,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &3906576315158219078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3954,7 +3931,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &3913567064209127519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4702,8 +4678,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &4871444593705545089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,7 +4845,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
->>>>>>> develop
 --- !u!1 &4974650180530447094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,8 +5182,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &5400606344194991005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,7 +5288,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &5410464173073811393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5598,8 +5568,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &5641088414284402876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5706,7 +5674,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &5716689781187331154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,8 +5840,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &5768159626157070484
 GameObject:
   m_ObjectHideFlags: 0
@@ -6087,7 +6052,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &6089585276380944037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,8 +6384,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &6400591704116786517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6528,7 +6490,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &6414788107587445712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,8 +6870,6 @@ Transform:
   - {fileID: 6737377243337433849}
   m_Father: {fileID: 2364125263805855145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &6596965541768347921
 GameObject:
   m_ObjectHideFlags: 0
@@ -7017,7 +6976,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &6796025911842145309
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,7 +7168,7 @@ Transform:
   m_GameObject: {fileID: 6842384176642702074}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6996151, z: -0, w: 0.7145199}
-  m_LocalPosition: {x: -3.069, y: 0.802, z: 3.324}
+  m_LocalPosition: {x: -3.07, y: 0.802, z: 3.14}
   m_LocalScale: {x: 0.14169, y: 0.14169, z: 0.14169}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7244,22 +7202,16 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
     type: 3}
   shootPoint: {fileID: 1434343202984769670}
-<<<<<<< HEAD
   turretTransform: {fileID: 2364125263805855145}
-=======
->>>>>>> develop
   fireRate: 3
   projectileSpeed: 35
   seekRadius: 10
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-<<<<<<< HEAD
   muzzleFlashPrefab: {fileID: 7696570862436483171, guid: 18f80a8f058be2149b63f19f587d236a,
     type: 3}
   muzzleFlashDuration: 1
-=======
->>>>>>> develop
   rotationSpeed: 5
   radiusColor: {r: 0, g: 0, b: 1, a: 0.29803923}
 --- !u!1 &6962418609623820616
@@ -7677,8 +7629,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &7691772108100452520
 GameObject:
   m_ObjectHideFlags: 0
@@ -7785,7 +7735,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &7715560431237350494
 GameObject:
   m_ObjectHideFlags: 0
@@ -7869,8 +7818,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &7895328217013601203
 GameObject:
   m_ObjectHideFlags: 0
@@ -7977,7 +7924,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &7991582329050402876
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,8 +8894,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2364125263805855145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &8882213638488371639
 GameObject:
   m_ObjectHideFlags: 0
@@ -9056,7 +9000,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &8919335593435712187
 GameObject:
   m_ObjectHideFlags: 0
@@ -9140,8 +9083,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &8956410885587731257
 GameObject:
   m_ObjectHideFlags: 0
@@ -9248,7 +9189,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4851751938882188684, guid: bdb49ea72d2972741b65407b79024853, type: 3}
->>>>>>> develop
 --- !u!1 &8999010798757077391
 GameObject:
   m_ObjectHideFlags: 0
@@ -9415,95 +9355,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
---- !u!1001 &6511194839263876207
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2364125263805855145}
-    m_Modifications:
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 99.144356
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 99.14438
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 99.144356
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.2100263
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.646027
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7131527
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7010088
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 177.808
-      objectReference: {fileID: 0}
-    - target: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8662056530695054491, guid: f708b568537b2834da18ac07976a256b,
-        type: 3}
-      propertyPath: m_Name
-      value: BaseTourelle 1_1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f708b568537b2834da18ac07976a256b, type: 3}
---- !u!4 &5410055053795942992 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1245255592029615679, guid: f708b568537b2834da18ac07976a256b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6511194839263876207}
-  m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> develop
