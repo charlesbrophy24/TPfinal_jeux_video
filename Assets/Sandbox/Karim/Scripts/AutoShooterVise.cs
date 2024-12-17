@@ -4,113 +4,130 @@ using UnityEngine;
 
 public class AutoShooterVise : MonoBehaviour
 {
-public GameObject projectilePrefab;      // Le prefab du projectile
-public Transform shootPoint;             // Le point d'où le projectile va être tiré (représente la tour)
-public float fireRate = 1f;              // Intervalle entre chaque tir (en secondes)
-public float projectileSpeed = 10f;      // La vitesse du projectile
-public float seekRadius = 50f;           // Rayon dans lequel la tour cherche un ennemi
-public LayerMask enemyLayer;             // Layer des ennemis (à définir dans l'éditeur)
-public float rotationSpeed = 5f;         // Vitesse de rotation de la tour vers l'ennemi
-public Color radiusColor = new Color(0, 0, 1, 0.3f); // Couleur du rayon (par défaut bleu avec transparence)
+    public GameObject projectilePrefab;      // Le prefab du projectile
+    public Transform shootPoint;             // Le point d'où le projectile va être tiré (représente la tour)
+    public float fireRate = 1f;              // Intervalle entre chaque tir (en secondes)
+    public float projectileSpeed = 10f;      // La vitesse du projectile
+    public float seekRadius = 50f;           // Rayon dans lequel la tour cherche un ennemi
+    public LayerMask enemyLayer;             // Layer des ennemis (à définir dans l'éditeur)
+    public float rotationSpeed = 5f;         // Vitesse de rotation de la tour vers l'ennemi
+    public Color radiusColor = new Color(0, 0, 1, 0.3f); // Couleur du rayon (par défaut bleu avec transparence)
 
-private float timeSinceLastShot = 0f;
+    public ParticleSystem shootParticles;    // Système de particules pour le tir
+    public float particleDuration = 1f;      // Durée des particules en secondes
 
-void Update()
-{
-    // On augmente le temps écoulé depuis le dernier tir
-    timeSinceLastShot += Time.deltaTime;
+    private float timeSinceLastShot = 0f;
 
-    // Si le temps écoulé est supérieur à l'intervalle de tir, on tire un projectile
-    if (timeSinceLastShot >= fireRate)
+    void Update()
     {
-        FireProjectile();
-        timeSinceLastShot = 0f;  // Réinitialiser le timer
-    }
-}
+        // On augmente le temps écoulé depuis le dernier tir
+        timeSinceLastShot += Time.deltaTime;
 
-void FireProjectile()
-{
-    if (projectilePrefab && shootPoint)
-    {
-        // Trouver tous les ennemis dans le rayon de détection
-        Collider[] enemiesInRange = Physics.OverlapSphere(shootPoint.position, seekRadius, enemyLayer);
-
-        // Filtrer pour ne garder que les ennemis avec le tag "Enemy"
-        List<GameObject> validEnemies = new List<GameObject>();
-        foreach (Collider col in enemiesInRange)
+        // Si le temps écoulé est supérieur à l'intervalle de tir, on tire un projectile
+        if (timeSinceLastShot >= fireRate)
         {
-            if (col.CompareTag("Enemy"))
-            {
-                validEnemies.Add(col.gameObject);
-            }
+            FireProjectile();
+            timeSinceLastShot = 0f;  // Réinitialiser le timer
         }
+    }
 
-        // Si des ennemis valides sont dans le rayon
-        if (validEnemies.Count > 0)
+    void FireProjectile()
+    {
+        if (projectilePrefab && shootPoint)
         {
-            // Trouver l'ennemi le plus proche
-            GameObject closestEnemy = GetClosestEnemy(validEnemies.ToArray());
-
-            if (closestEnemy != null)
+            // Jouer les particules si elles sont assignées
+            if (shootParticles != null)
             {
-                // Calculer la direction vers l'ennemi
-                Vector3 directionToTarget = (closestEnemy.transform.position - shootPoint.position).normalized;
+                shootParticles.Play();
+                StartCoroutine(StopParticlesAfterDelay());
+            }
 
-                // Faire tourner la tour progressivement vers l'ennemi
-                Vector3 newDirection = Vector3.RotateTowards(shootPoint.forward, directionToTarget, rotationSpeed * Time.deltaTime, 0f);
-                shootPoint.rotation = Quaternion.LookRotation(newDirection);
+            // Trouver tous les ennemis dans le rayon de détection
+            Collider[] enemiesInRange = Physics.OverlapSphere(shootPoint.position, seekRadius, enemyLayer);
 
-                // Créer le projectile à la position de tir
-                GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-
-                // Calculer la direction vers l'ennemi et donner une vitesse au projectile
-                Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                if (rb != null)
+            // Filtrer pour ne garder que les ennemis avec le tag "Enemy"
+            List<GameObject> validEnemies = new List<GameObject>();
+            foreach (Collider col in enemiesInRange)
+            {
+                if (col.CompareTag("Enemy"))
                 {
-                    // Appliquer la direction et la vitesse au projectile
-                    rb.velocity = directionToTarget * projectileSpeed;
+                    validEnemies.Add(col.gameObject);
+                }
+            }
+
+            // Si des ennemis valides sont dans le rayon
+            if (validEnemies.Count > 0)
+            {
+                // Trouver l'ennemi le plus proche
+                GameObject closestEnemy = GetClosestEnemy(validEnemies.ToArray());
+
+                if (closestEnemy != null)
+                {
+                    // Calculer la direction vers l'ennemi
+                    Vector3 directionToTarget = (closestEnemy.transform.position - shootPoint.position).normalized;
+
+                    // Faire tourner la tour progressivement vers l'ennemi
+                    Vector3 newDirection = Vector3.RotateTowards(shootPoint.forward, directionToTarget, rotationSpeed * Time.deltaTime, 0f);
+                    shootPoint.rotation = Quaternion.LookRotation(newDirection);
+
+                    // Créer le projectile à la position de tir
+                    GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+
+                    // Calculer la direction vers l'ennemi et donner une vitesse au projectile
+                    Rigidbody rb = projectile.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        // Appliquer la direction et la vitesse au projectile
+                        rb.velocity = directionToTarget * projectileSpeed;
+                    }
                 }
             }
         }
     }
-}
 
-// Fonction pour obtenir l'ennemi le plus proche
-GameObject GetClosestEnemy(GameObject[] enemies)
-{
-    GameObject closestEnemy = null;
-    float minDistance = Mathf.Infinity;
-
-    foreach (GameObject enemy in enemies)
+    IEnumerator StopParticlesAfterDelay()
     {
-        // Calculer la distance à l'ennemi
-        float distanceToEnemy = Vector3.Distance(shootPoint.position, enemy.transform.position);
-
-        // Vérifier si cet ennemi est le plus proche
-        if (distanceToEnemy < minDistance)
+        // Attendre la durée spécifiée
+        yield return new WaitForSeconds(particleDuration);
+        if (shootParticles != null)
         {
-            minDistance = distanceToEnemy;
-            closestEnemy = enemy;
+            shootParticles.Stop();
         }
     }
 
-    return closestEnemy;
-}
-
-// Fonction pour dessiner la zone de recherche dans l'éditeur
-void OnDrawGizmos()
-{
-    // Vérifier si la position du shootPoint est définie et visible
-    if (shootPoint != null)
+    // Fonction pour obtenir l'ennemi le plus proche
+    GameObject GetClosestEnemy(GameObject[] enemies)
     {
-        // Configurer la couleur du rayon (modifiable dans l'éditeur)
-        Gizmos.color = radiusColor;
+        GameObject closestEnemy = null;
+        float minDistance = Mathf.Infinity;
 
-        // Dessiner une sphère pour représenter le rayon de recherche
-        Gizmos.DrawSphere(shootPoint.position, seekRadius);
+        foreach (GameObject enemy in enemies)
+        {
+            // Calculer la distance à l'ennemi
+            float distanceToEnemy = Vector3.Distance(shootPoint.position, enemy.transform.position);
+
+            // Vérifier si cet ennemi est le plus proche
+            if (distanceToEnemy < minDistance)
+            {
+                minDistance = distanceToEnemy;
+                closestEnemy = enemy;
+            }
+        }
+
+        return closestEnemy;
     }
-}
 
+    // Fonction pour dessiner la zone de recherche dans l'éditeur
+    void OnDrawGizmos()
+    {
+        // Vérifier si la position du shootPoint est définie et visible
+        if (shootPoint != null)
+        {
+            // Configurer la couleur du rayon (modifiable dans l'éditeur)
+            Gizmos.color = radiusColor;
 
-
+            // Dessiner une sphère pour représenter le rayon de recherche
+            Gizmos.DrawSphere(shootPoint.position, seekRadius);
+        }
+    }
 }
