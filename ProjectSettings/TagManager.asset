@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - PrincipalTower
+  - Mauvais
   layers:
   - Default
   - TransparentFX

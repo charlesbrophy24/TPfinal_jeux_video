@@ -40,10 +40,12 @@ public class ZoneAutourDeTour : MonoBehaviour
                 spawnedPlanes.RemoveAt(i);  // Remove it from the list
             }
         }
+
+
     }
 
     // Method to spawn a plane just outside the spawn radius, but within max spawn distance
- public void SpawnPlane()
+public void SpawnPlane()
 {
     const int maxAttempts = 100; 
     int attempts = 0;
@@ -52,30 +54,33 @@ public class ZoneAutourDeTour : MonoBehaviour
     {
         attempts++;
 
-        // Generate random X and Z positions
+        // Generate random X and Z positions within spawnRadius
         float randomX = Random.Range(-spawnRadiusX, spawnRadiusX);
         float randomZ = Random.Range(-spawnRadiusZ, spawnRadiusZ);
 
-        // Ensure position is outside spawnDistance
-        if (Mathf.Abs(randomX) < spawnDistance && Mathf.Abs(randomZ) < spawnDistance)
+        // Calculate the 2D distance from the center (ignoring height)
+        Vector2 position2D = new Vector2(randomX, randomZ);
+        float distanceFromCenter = position2D.magnitude;
+
+        // Ensure position is outside spawnDistance but within spawnRadius
+        if (distanceFromCenter < spawnDistance || distanceFromCenter > Mathf.Max(spawnRadiusX, spawnRadiusZ))
             continue;
 
         // Generate Y position
-        float randomY = Random.Range(transform.position.y, transform.position.y + minSpawnHeight);
+        float randomY = transform.position.y + spawnHeightOffset + Random.Range(0f, minSpawnHeight);
 
-        // Calculate final spawn position
+        // Final spawn position
         Vector3 spawnPosition = transform.position + new Vector3(randomX, randomY, randomZ);
 
-        // Check if the position is within max spawn distance
+        // Check if position is within maxSpawnDistance
         float distanceFromTower = Vector3.Distance(transform.position, spawnPosition);
-        Debug.Log($"Attempt {attempts}: Position {spawnPosition}, Distance: {distanceFromTower}");
-
         if (distanceFromTower <= maxSpawnDistance)
         {
             // Instantiate the plane
             GameObject newPlane = Instantiate(planePrefab, spawnPosition, Quaternion.identity);
             spawnedPlanes.Add(newPlane);
-            Debug.Log("Plane spawned successfully at: " + spawnPosition);
+
+            Debug.Log($"Plane spawned successfully at: {spawnPosition}");
             return; // Exit after spawning
         }
     }
