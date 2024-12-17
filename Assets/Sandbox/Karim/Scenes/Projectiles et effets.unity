@@ -486,15 +486,17 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
     type: 3}
   shootPoint: {fileID: 459990218}
+  turretTransform: {fileID: 0}
   fireRate: 1
   projectileSpeed: 30
   seekRadius: 8.68
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  rotationSpeed: 5
   muzzleFlashPrefab: {fileID: 0}
   muzzleFlashDuration: 0.2
+  rotationSpeed: 5
+  radiusColor: {r: 0, g: 0, b: 1, a: 0.3}
 --- !u!114 &490536269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +549,7 @@ PrefabInstance:
     - target: {fileID: 2397826583020893637, guid: 5a8d1da3eb596a748ace09a42cb7892b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.912
+      value: 0.802
       objectReference: {fileID: 0}
     - target: {fileID: 2397826583020893637, guid: 5a8d1da3eb596a748ace09a42cb7892b,
         type: 3}
@@ -594,6 +596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 105mm_buldog
       objectReference: {fileID: 0}
+    - target: {fileID: 7507831241068192937, guid: 5a8d1da3eb596a748ace09a42cb7892b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -634,16 +641,24 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3624639703354166647, guid: 8b0a66f960be110499e67bc9a7edb0cb,
     type: 3}
   shootPoint: {fileID: 1164621954}
+  turretTransform: {fileID: 1116550240}
   fireRate: 1
   projectileSpeed: 25
   seekRadius: 10
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  rotationSpeed: 5
   muzzleFlashPrefab: {fileID: 7696570862436483171, guid: 18f80a8f058be2149b63f19f587d236a,
     type: 3}
   muzzleFlashDuration: 1
+  rotationSpeed: 5
+  radiusColor: {r: 0, g: 0, b: 1, a: 0.3}
+--- !u!4 &1116550240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2397826583020893637, guid: 5a8d1da3eb596a748ace09a42cb7892b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1116550236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1164621953
 GameObject:
   m_ObjectHideFlags: 0
