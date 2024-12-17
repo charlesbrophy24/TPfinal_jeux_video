@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - PrincipalTower
   - Mauvais
+  - Tour
+  - Car
   layers:
   - Default
   - TransparentFX
