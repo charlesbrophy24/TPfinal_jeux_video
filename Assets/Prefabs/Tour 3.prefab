@@ -6498,6 +6498,7 @@ GameObject:
   - component: {fileID: 3108169677027452766}
   - component: {fileID: 5753444990738706339}
   - component: {fileID: 6007733395132541651}
+  - component: {fileID: -5459432199764124751}
   m_Layer: 0
   m_Name: Tour 3
   m_TagString: Untagged
@@ -6607,6 +6608,21 @@ MonoBehaviour:
   muzzleFlashDuration: 1
   rotationSpeed: 1
   radiusColor: {r: 0, g: 0, b: 1, a: 0.3}
+--- !u!114 &-5459432199764124751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879599071773152276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00842db88a517a48acfe53e2c65ec76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 2d1aabaa3bf12344892213d098081694, type: 2}
+  pointCostNb: 50
+  activeDuration: 5
 --- !u!1 &7933721291795349207
 GameObject:
   m_ObjectHideFlags: 0
