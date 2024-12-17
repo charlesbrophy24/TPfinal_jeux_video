@@ -8284,7 +8284,7 @@ MonoBehaviour:
         m_MethodName: ClickButon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7879599071773152276, guid: a31778a3c4dbdd64781f80ae55de03b0,
+          m_ObjectArgument: {fileID: 6639847286894183918, guid: 8b3c15420c1976a4e90aa14cda6d7b6f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -20088,7 +20088,7 @@ MonoBehaviour:
         m_MethodName: ClickButon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6842384176642702074, guid: 6a90b3e3f606f194888ad21f19ed26cd,
+          m_ObjectArgument: {fileID: 5484677281833491474, guid: afb890fe2c6ab3e4bb73b040bcea517e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -23726,7 +23726,7 @@ MonoBehaviour:
         m_MethodName: ClickButon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 919532922011033297, guid: b5b3147a6cc02b140951c914cc15dc93,
+          m_ObjectArgument: {fileID: 7758258354437465952, guid: cbb596c0ab32d7f4691772bbb4334162,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
