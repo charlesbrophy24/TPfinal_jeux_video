@@ -1058,11 +1058,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tours 2
       objectReference: {fileID: 0}
-    - target: {fileID: 919532922011033297, guid: b5b3147a6cc02b140951c914cc15dc93,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1131,11 +1126,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tour 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7879599071773152276, guid: a31778a3c4dbdd64781f80ae55de03b0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1152,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 2364125263805855145, guid: 6a90b3e3f606f194888ad21f19ed26cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.069
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 2364125263805855145, guid: 6a90b3e3f606f194888ad21f19ed26cd,
         type: 3}
@@ -1162,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 2364125263805855145, guid: 6a90b3e3f606f194888ad21f19ed26cd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.324
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 2364125263805855145, guid: 6a90b3e3f606f194888ad21f19ed26cd,
         type: 3}
@@ -1203,11 +1193,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tours 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842384176642702074, guid: 6a90b3e3f606f194888ad21f19ed26cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
